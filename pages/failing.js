@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const Failing = ({ query }) => (
+const Failing = ({ query }) => console.log('render page') || (
   <div>
     <h1>Trouble</h1>
     <Link href={{ query: { fail: 1 } }}>
@@ -11,7 +11,7 @@ const Failing = ({ query }) => (
 )
 
 Failing.getInitialProps = async (ctx) => {
-  console.log('gip')
+  console.log('Page getInitialProps')
   return {
     query: ctx.query,
   }
